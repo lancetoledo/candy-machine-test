@@ -22,16 +22,13 @@ const Hero = () => {
   return (
     <main className={styles.wrapper}>
       <div className={styles.container}>
-        <h1 className={styles.heroTitle}>Moonbirds</h1>
+        <h1 className={styles.heroTitle}>Solana Monkey Business</h1>
         <p className={styles.heroParagraph}>
-          A collection of 10,000 utility-enabled PFPs that feature a richly
-          diverse and unique pool of rarity-powered traits. What's more, each
-          Moonbird unlocks private club membership and additional benefits the
-          longer you hold them. We call it nesting – because, obviously.
+          SMB Gen2 is a collection of 5000 unique 24x24 pixels randomly generated Monkeys stored on the Solana blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the blockchain and spread their community. The monkeys feature owner-exclusive advantages such as NFT ownership, as well as a community wallet useable by holders with a future on-chain voting system. The Solana Monkeys' metadata is stored on Arweave, a permanent decentralized data storage. Each monkey is generated from over 99 possible traits spread over 6 layers, with some monkeys being rarer than others. Reject humanity, return to monke.
         </p>
         <div className={styles.heroCta}>
           <Link href='/?mint=1'>
-            <button className={styles.mintButton}>Mint Your NFT 0.1 ETH</button>
+            <button className={styles.mintButton}>Mint Your NFT 0.1 SOL</button>
           </Link>
           {/* {!!nftData.length && <p>{nftData.length} minted already</p>} */}
         </div>

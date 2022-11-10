@@ -22,7 +22,7 @@ const index = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.title}>Mint your MoonBird NFT</div>
+      <div className={styles.title}>Mint your Solana Monkey Business NFT</div>
 
       <div className={styles.description}>
         Paste your pinned IPFS NFT Metadata URI:
