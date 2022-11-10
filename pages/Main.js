@@ -106,6 +106,8 @@ export default function Main() {
     infoSection: 'lg:w-2/3 px-10',
     mobileDisplaySection: 'h-[300px] flex w-full lg:hidden lg:w-1/3 mt-4',
     desktopDisplaySection: 'hidden lg:flex flex-1 lg:w-1/3',
+    mintButton:
+      'rounded-xl border border-gray-100 bg-transparent px-8 py-4 font-semibold text-gray-100 transition-all hover:bg-gray-100 hover:text-[#1d1d1d]',
   }
 
   //NEW UI
@@ -123,6 +125,26 @@ export default function Main() {
           </div>
 
           <Hero />
+          <div>
+            {candyStateLoading ? (
+              <div>Loading...</div>
+            ) : candyStateError ? (
+              <div>{candyStateError}</div>
+            ) : (
+              candyState && (
+                <div>
+                  <div>Total items: {candyState.itemsAvailable.toString()}</div>
+                  <div>Minted items: {candyState.itemsMinted.toString()}</div>
+                  <div>Remaining items: {candyState.itemsRemaining.toString()}</div>
+                  {solAmount && <div>Cost: ◎ {solAmount}</div>}
+                  {txError && <div>{txError}</div>}
+                  <button className={styles.mintButton} onClick={mint} disabled={!wallet || txLoading || soldOut}>
+                    {soldOut ? "SOLD OUT" : txLoading ? "LOADING..." : "MINT"}
+                  </button>
+                </div>
+              )
+            )}
+          </div>
         </section>
 
         <section className={styles.desktopDisplaySection}>

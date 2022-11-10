@@ -27,9 +27,9 @@ const Hero = () => {
           SMB Gen2 is a collection of 5000 unique 24x24 pixels randomly generated Monkeys stored on the Solana blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the blockchain and spread their community. The monkeys feature owner-exclusive advantages such as NFT ownership, as well as a community wallet useable by holders with a future on-chain voting system. The Solana Monkeys' metadata is stored on Arweave, a permanent decentralized data storage. Each monkey is generated from over 99 possible traits spread over 6 layers, with some monkeys being rarer than others. Reject humanity, return to monke.
         </p>
         <div className={styles.heroCta}>
-          <Link href='/?mint=1'>
+          {/* <Link href='/?mint=1'>
             <button className={styles.mintButton}>Mint Your NFT 0.1 SOL</button>
-          </Link>
+          </Link> */}
           {/* {!!nftData.length && <p>{nftData.length} minted already</p>} */}
         </div>
       </div>
