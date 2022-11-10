@@ -8,6 +8,7 @@ import { classNames } from '../../utils/classNames'
 import { modalStyles } from '../../lib/ModalStyles';
 import Logo from './Logo'
 import { MintModal } from '../index'
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 
 Modal.setAppElement('#__next')
 
@@ -58,40 +59,7 @@ const Header = ({ isAdmin, inAllowlist, joinAllowlist, downloadAllowlist }) => {
           </div>
         </ul>
 
-        <Menu as='div' className={styles.menuBox}>
-          <div>
-            <Menu.Button className={styles.menuButton}>
-              <MenuIcon className={styles.menuIcon} />
-            </Menu.Button>
-          </div>
-
-          <Transition
-            as={Fragment}
-            enter={transitions.menuEnter}
-            enterFrom={transitions.menuEnterFrom}
-            enterTo={transitions.menuEnterTo}
-            leave={transitions.menuLeave}
-            leaveFrom={transitions.leaveFrom}
-            leaveTo={transitions.menuLeaveTo}
-          >
-            <Menu.Items className={styles.menuItems}>
-              <div className={styles.menuItemsContainer}>
-                <Menu.Item>
-                  {({ active }) => (
-                    <button
-                      className={classNames(
-                        active ? styles.buttonActive : styles.buttonInactive,
-                        styles.menuItem,
-                      )}
-                    >
-                      Disconnect
-                    </button>
-                  )}
-                </Menu.Item>
-              </div>
-            </Menu.Items>
-          </Transition>
-        </Menu>
+        <WalletMultiButton />
       </div>
       <Modal
         isOpen={!!router.query.mint}
