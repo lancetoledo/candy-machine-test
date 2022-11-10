@@ -12,21 +12,23 @@ const NFTDisplay = () => {
 
 
   const nfts = [
-    '/3574.png',
-    '/4697.png',
-    '/5344.png',
-    '/8294.png',
-    '/8976.png',
+    'https://arweave.net/u041LLnK_3nIY4cSCoVv-yisS0NmjcOL5jvZSiNUhlI',
+    'https://arweave.net/1GP5OmLFXo0z_QgJNCztbNLU2T3y38z9epgtwTBW67k',
+    'https://arweave.net/o0xad2ydRa_1dcl-0K4zV3HSUxPaHmw9zLQm578_ZRo',
+    'https://arweave.net/FNnRhGeLWj0TXUkZt2E7G8ZWBZDxRE1o3adJ8GrZ75s'
+
   ]
 
   return (
     <div className={styles.wrapper}>
-      {/* {nftData.map((nft, index) => (
-        <div key={index} className={styles.imageContainer}>
-          <Image className={styles.nftImage} src={nft.image} layout='fill' />
+      {nfts.map((nft, index) => (
+        // console.log(nft)
+        < div key={index} className={styles.imageContainer} >
+          <Image className={styles.nftImage} src={nft} layout='fill' alt='nft' />
         </div>
-      ))} */}
-    </div>
+      ))
+      }
+    </div >
   )
 }
 

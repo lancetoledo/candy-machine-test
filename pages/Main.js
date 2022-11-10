@@ -113,44 +113,42 @@ export default function Main() {
   //NEW UI
   return (
     <div className={styles.wrapper}>
-      <Head>
-        <title>Home | Solana Monkey Business NFT</title>
-      </Head>
-
-      <div className={styles.container}>
-        <section className={styles.infoSection}>
-          <Header />
-          <div className={styles.mobileDisplaySection}>
-            <NFTDisplay />
-          </div>
-
-          <Hero />
+      {candyStateLoading ? (
+        <div>Loading...</div>
+      ) : candyStateError ? (
+        <div>{candyStateError}</div>
+      ) : (
+        candyState && (
           <div>
-            {candyStateLoading ? (
-              <div>Loading...</div>
-            ) : candyStateError ? (
-              <div>{candyStateError}</div>
-            ) : (
-              candyState && (
-                <div>
-                  <div>Total items: {candyState.itemsAvailable.toString()}</div>
-                  <div>Minted items: {candyState.itemsMinted.toString()}</div>
-                  <div>Remaining items: {candyState.itemsRemaining.toString()}</div>
-                  {solAmount && <div>Cost: ◎ {solAmount}</div>}
-                  {txError && <div>{txError}</div>}
-                  <button className={styles.mintButton} onClick={mint} disabled={!wallet || txLoading || soldOut}>
-                    {soldOut ? "SOLD OUT" : txLoading ? "LOADING..." : "MINT"}
-                  </button>
-                </div>
-              )
-            )}
-          </div>
-        </section>
+            <Head>
+              <title>Home | Solana Monkey Business NFT</title>
+            </Head>
 
-        <section className={styles.desktopDisplaySection}>
-          <NFTDisplay />
-        </section>
-      </div>
+            <div className={styles.container}>
+              <section className={styles.infoSection}>
+                <Header />
+                <div className={styles.mobileDisplaySection}>
+                  <NFTDisplay />
+                </div>
+
+                <Hero />
+                <button className={styles.mintButton} onClick={mint} disabled={!wallet || txLoading || soldOut}>
+                  {soldOut ? "SOLD OUT" : txLoading ? "LOADING..." : "MINT"}
+                </button>
+
+                {nfts.map((nft) => {
+                  console.log(nft.uri)
+                })}
+              </section>
+
+              <section className={styles.desktopDisplaySection}>
+                <NFTDisplay />
+              </section>
+            </div>
+          </div>
+        )
+      )}
+
     </div>
   )
 
